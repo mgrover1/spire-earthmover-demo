@@ -1,0 +1,30 @@
+[project]
+name = "spire-earthmover-demo"
+version = "0.1.0"
+description = "Demo notebook for Spire's AI-S2S forecast on the Earthmover Data Marketplace"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Spire Earthmover Demo" },
+]
+dependencies = [
+    "arraylake>=1.0.2",
+    "xarray>=2024.10",
+    "zarr>=3.0",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "matplotlib>=3.8",
+    "cartopy>=0.23",
+    "regionmask>=0.13",
+    "shapely>=2.0",
+    "dask[distributed]>=2024.10",
+    "jupyterlab>=4.2",
+    "ipykernel>=6.29",
+    "ipywidgets>=8.1",
+    "netcdf4>=1.7",
+    "nbconvert>=7.16",
+]
+
+[tool.uv]
+package = false
