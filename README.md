@@ -15,6 +15,7 @@ The walkthrough notebook is written for **energy desks** evaluating extended-ran
 | Path | Purpose |
 |-|-|
 | `notebooks/Spire_AI_S2S_on_Earthmover.ipynb` | The webinar walkthrough, North America focus (Colab-ready; Project Pythia template) |
+| `notebooks/Spire_AI_S2S_on_Earthmover_India.ipynb` | Asia webinar variant of the walkthrough: Indian summer monsoon focus (rainfall anomaly + 850 hPa flow, T-max, metro rainfall fans, regional area means) |
 | `notebooks/Spire_AI_S2S_seam_diagnostic.ipynb` | Diagnosis of the 0°/360° longitude seam artifact, the post-processing fix, and the checks to verify a repaired store |
 | `pyproject.toml` + `uv.lock` | `uv`-managed Python environment, pinned for reproducibility |
 | `images/spire-logo.svg` | Spire word-mark (CC BY-SA 4.0 via Wikimedia Commons) |
@@ -51,6 +52,8 @@ uv run arraylake auth login
 uv run jupyter lab notebooks/Spire_AI_S2S_on_Earthmover.ipynb
 ```
 
+The India notebook runs the same way: `uv run jupyter lab notebooks/Spire_AI_S2S_on_Earthmover_India.ipynb`.
+
 The diagnostic notebook runs the same way: `uv run jupyter lab notebooks/Spire_AI_S2S_seam_diagnostic.ipynb`.
 
 Or open the notebook in [Google Colab](https://colab.research.google.com/) and run the first setup cell, which installs the dependencies and authenticates to Arraylake.
@@ -69,6 +72,17 @@ Or open the notebook in [Google Colab](https://colab.research.google.com/) and r
 | **Weather regimes** | Daily CONUS regime probability bars |
 | **Load-center fans** | 200-member percentile fans at Houston, Chicago, New York and Washington |
 | **ISO area means** | Cosine-weighted PJM / MISO / ERCOT / NYISO T-max anomaly curves over the full horizon |
+
+### `Spire_AI_S2S_on_Earthmover_India.ipynb` — Asia webinar walkthrough (Indian monsoon)
+
+Same open recipe and helpers as the North America notebook, with the regional sections re-pointed at the Indian summer monsoon.
+
+| Section | What it does |
+|-|-|
+| **Rainfall + 850 hPa flow, wks 1–6** | Weekly-mean precipitation anomaly (mm/day vs ERA5 1991–2020) with 850 hPa ensemble-mean wind vectors over India |
+| **T-max anomaly, wks 1–6** | Weekly-mean 2-m T-max anomaly (°C) over India |
+| **Metro rainfall fans** | 200-member percentile fans of daily rainfall at Delhi, Mumbai, Kolkata and Chennai |
+| **Regional area means** | Cosine-weighted rainfall anomaly curves for Northwest, Central, South Peninsula and Northeast India boxes |
 
 ### `Spire_AI_S2S_seam_diagnostic.ipynb` — seam artifact: diagnose and verify the fix
 
